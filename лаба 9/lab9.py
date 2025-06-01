@@ -3,7 +3,6 @@ import json
 
 
 def print_response_details(response):
-    print("\n=== Response Details ===")
     print(f"Status Code: {response.status_code}")
     print("\nHeaders:")
     for header, value in response.headers.items():
@@ -16,14 +15,12 @@ def print_response_details(response):
 
 
 def send_options(url):
-    """Отправка OPTIONS запроса"""
     print(f"\nSending OPTIONS request to: {url}")
     response = requests.options(url)
     print_response_details(response)
 
 
 def send_get(url, params=None):
-    """Отправка GET запроса"""
     print(f"\nSending GET request to: {url}")
     if params:
         print(f"\nRequest Parameters: {params}")
@@ -33,7 +30,6 @@ def send_get(url, params=None):
 
 
 def send_post(url, data=None, json_data=None):
-    """Отправка POST запроса"""
     print(f"\nSending POST request to: {url}")
     if data:
         print(f"\nRequest Form Data: {data}")
